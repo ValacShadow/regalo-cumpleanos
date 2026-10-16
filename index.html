@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff3f5">
+  <meta name="description" content="Una pequeña sorpresa de cumpleaños, hecha con mucho cariño.">
+  <title>Para mi niña ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span class="floaty f1">♡</span><span class="floaty f2">✿</span>
+    <span class="floaty f3">✧</span><span class="floaty f4">♡</span>
+    <span class="floaty f5">🦋</span><span class="floaty f6">✦</span>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#" id="homeLink" aria-label="Volver al comienzo">para ti <span>♡</span></a>
+    <div class="top-actions">
+      <div class="language-switch" role="group" aria-label="Language / Idioma">
+        <button type="button" class="lang-button is-active" data-lang="es" aria-pressed="true">Español</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" class="lang-button" data-lang="en" aria-pressed="false">English</button>
+      </div>
+      <button class="icon-button music-shortcut" id="musicShortcut" type="button" aria-label="Pausar o reanudar música" title="Pausar o reanudar música">♫</button>
+    </div>
+  </header>
+
+  <main class="site-shell">
+    <div class="progress-wrap" aria-label="Progreso de la sorpresa">
+      <div class="progress-label"><span id="chapterCounter">Capítulo 1 de 6</span><span id="progressCaption">una sorpresita</span></div>
+      <div class="progress-dots" id="progressDots" role="group" aria-label="Navegación por capítulos">
+        <button type="button" data-go="0" aria-label="Capítulo 1" class="dot current">♡</button>
+        <button type="button" data-go="1" aria-label="Capítulo 2" class="dot">♡</button>
+        <button type="button" data-go="2" aria-label="Capítulo 3" class="dot">♡</button>
+        <button type="button" data-go="3" aria-label="Capítulo 4" class="dot">♡</button>
+        <button type="button" data-go="4" aria-label="Capítulo 5" class="dot">♡</button>
+        <button type="button" data-go="5" aria-label="Capítulo 6" class="dot">♡</button>
+      </div>
+    </div>
+
+    <section class="chapter active" id="chapter-0" aria-labelledby="welcomeTitle">
+      <div class="welcome-art" aria-hidden="true">
+        <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
+        <div class="butterfly">🦋</div><div class="tiny-heart heart-a">♡</div>
+        <div class="tiny-heart heart-b">✧</div><div class="flower flower-a">✿</div>
+      </div>
+      <p class="eyebrow" data-i18n="welcomeEyebrow">UNA PEQUEÑA SORPRESA, HECHA PARA TI</p>
+      <h1 id="welcomeTitle" data-i18n="welcomeTitle">¡Hola, <span class="name-slot">mi niña</span>!</h1>
+      <p class="lede" data-i18n="welcomeBody">Preparé este rinconcito con mucho cariño. No es una sorpresa enorme, pero sí está llena de cositas que quiero que recuerdes hoy… y siempre.</p>
+      <button class="primary-button" id="startButton" type="button"><span data-i18n="welcomeCta">Tengo una sorpresa para ti...</span><span aria-hidden="true"> ↗</span></button>
+      <p class="handwritten" data-i18n="welcomeFoot">Hecha especialmente para ti, con amor ♡</p>
+    </section>
+
+    <section class="chapter" id="chapter-1" aria-labelledby="loveTitle" hidden>
+      <p class="eyebrow" data-i18n="loveEyebrow">PEQUEÑAS COSAS, UN CARIÑO ENORME</p>
+      <h2 id="loveTitle" data-i18n="loveTitle">Las cositas que amo de ti</h2>
+      <p class="section-intro" data-i18n="loveIntro">Toca cada sobre para abrir una notita. Puedes abrirlos todos, sin afán.</p>
+      <div class="note-grid" id="noteGrid"></div>
+      <div class="chapter-actions"><button class="secondary-button back-button" type="button" data-back data-i18n="back">Volver</button><button class="primary-button" type="button" data-next><span data-i18n="continue">Continuar</span> <span aria-hidden="true">→</span></button></div>
+    </section>
+
+    <section class="chapter" id="chapter-2" aria-labelledby="letterTitle" hidden>
+      <p class="eyebrow" data-i18n="letterEyebrow">UNAS PALABRITAS PARA TI</p>
+      <h2 id="letterTitle" data-i18n="letterTitle">Así me enamoré de ti</h2>
+      <button class="letter-open-button" id="openLetterButton" type="button" aria-controls="loveLetterCard">
+        <span class="envelope-art" aria-hidden="true"><span class="envelope-heart">♡</span></span>
+        <span data-i18n="letterOpen">Abre tu cartita, mi amor</span>
+        <span class="letter-open-subtitle" data-i18n="letterOpenHint">Toca el sobre para descubrir lo que te escribí</span>
+      </button>
+      <div class="letter-card" id="loveLetterCard" hidden>
+        <div class="letter-top"><span>♡</span><span data-i18n="letterLabel">Una carta para mi niña</span><span>♡</span></div>
+        <div class="letter-body">
+          <p data-i18n="letterGreeting">Mi niña bonita,</p>
+          <p id="letterText" data-i18n="letterBody">Hay algo muy especial en ti. Me encanta tu forma de ser, la alegría que transmites y cómo hasta los pequeños momentos se sienten más bonitos cuando los comparto contigo. Me gustas por lo que eres, por tus detalles y por esa manera tan tuya de hacerte querer.</p>
+          <!-- <p data-i18n="letterClosing">Con todo mi cariño,</p> -->
+          <p class="signature" id="signatureText" data-i18n="signature">alguien que te quiere muchísimo ♡</p>
+        </div>
+        <span class="letter-stamp" aria-hidden="true">♡</span>
+      </div>
+      <!-- <p class="edit-hint" data-i18n="letterHint">Esta carta es un ejemplo editable: cámbiala por tus propias palabras en config.js.</p> -->
+      <!-- <p class="voice-note-hint" data-i18n="letterVoiceHint">Si añades assets/audio/letter-voice.mp3, escucharás mi voz leyendo esta carta. Si no está, sonará la música de fondo.</p> -->
+      <div class="chapter-actions"><button class="secondary-button back-button" type="button" data-back data-i18n="back">Volver</button><button class="primary-button" type="button" data-next><span data-i18n="continue">Continuar</span> <span aria-hidden="true">→</span></button></div>
+    </section>
+
+    <section class="chapter" id="chapter-3" aria-labelledby="galleryTitle" hidden>
+      <p class="eyebrow" data-i18n="galleryEyebrow">NUESTROS RECUERDOS BONITOS</p>
+      <h2 id="galleryTitle" data-i18n="galleryTitle">Tú, tan bonita como siempre</h2>
+      <p class="section-intro" data-i18n="galleryIntro">Un espacio para tus fotos favoritas. Reemplaza las imágenes de ejemplo por las tuyas y agrega las historias que quieras recordar.</p>
+      <div class="gallery-layout">
+        <div class="featured-photo" id="featuredPhoto">
+          <!-- Photo display -->
+          <img
+            id="mainPhoto"
+            src="assets/photos/photo-1.jpg"
+            alt="Foto de ejemplo pendiente de reemplazar"
+            loading="lazy"
+            tabindex="0"
+            role="button"
+            aria-label="Click to enlarge photo"
+          >
+        
+          <!-- Video display: hidden until a video is selected -->
+          <video
+            id="mainVideo"
+            class="gallery-video"
+            controls
+            playsinline
+            preload="metadata"
+            hidden
+            aria-label="Video de la galería"
+          ></video>
+        
+          <span class="photo-tape" aria-hidden="true"></span>
+        
+          <p class="photo-caption" id="photoCaption">
+            [Añade aquí tu caption ♡]
+          </p>
+        
+          <!-- Full-size photo button; hidden for videos by JavaScript -->
+          <button
+            class="expand-photo"
+            id="expandPhoto"
+            type="button"
+            aria-label="Ver foto a tamaño completo"
+          >⤢</button>
+        </div>
+        <div class="gallery-side">
+          <div class="thumbnail-row" id="thumbnailRow" aria-label="Seleccionar foto"></div>
+          <div class="gallery-controls"><button class="round-button" id="prevPhoto" type="button" aria-label="Foto anterior">←</button><span id="photoCount">1 / 3</span><button class="round-button" id="nextPhoto" type="button" aria-label="Foto siguiente">→</button></div>
+          <p class="swipe-hint" data-i18n="swipeHint">En el celular, desliza la foto para pasar a la siguiente.</p>
+
+        </div>
+      </div>
+      <dialog id="photoDialog" class="photo-dialog" aria-label="Foto a tamaño completo">
+        <button type="button" id="closePhotoDialog" class="dialog-close" aria-label="Cerrar foto">×</button>
+        <img id="largePhoto" src="" alt="">
+        <p id="largeCaption"></p>
+      </dialog>
+      <div class="chapter-actions"><button class="secondary-button back-button" type="button" data-back data-i18n="back">Volver</button><button class="primary-button" type="button" data-next><span data-i18n="continue">Continuar</span> <span aria-hidden="true">→</span></button></div>
+    </section>
+
+    <section class="chapter cake-chapter" id="chapter-4" aria-labelledby="cakeTitle" hidden>
+      <p class="eyebrow" data-i18n="cakeEyebrow">UN MOMENTICO SOLO PARA TI</p>
+      <h2 id="cakeTitle" data-i18n="cakeTitle">Pide un deseo</h2>
+      <p class="section-intro" data-i18n="cakeIntro">Cierra los ojitos un momento, piensa en algo bonito y pide un deseo. Este momento es tuyo.</p>
+      <div class="cake-scene" id="cakeScene">
+        <div class="cake-sparkle sparkle-one">✦</div><div class="cake-sparkle sparkle-two">✧</div>
+        <div class="candles" id="candles">
+          <div class="candle candle-one"><span class="flame"></span></div><div class="candle candle-two"><span class="flame"></span></div><div class="candle candle-three"><span class="flame"></span></div>
+        </div>
+        <div class="cake-top"><span class="icing-drip"></span><span class="cake-heart">♡</span></div>
+        <div class="cake-middle"></div><div class="cake-bottom"></div>
+        <div class="cake-plate"></div>
+      </div>
+      <p id="wishMessage" class="wish-message" aria-live="polite" data-i18n="wishPrompt">Respira profundo… y pide tu deseo ✨</p>
+      <button class="primary-button wish-button" id="wishButton" type="button"><span data-i18n="wishCta">Ya pedí mi deseo</span> <span aria-hidden="true">♡</span></button>
+      <div class="chapter-actions"><button class="secondary-button back-button" type="button" data-back data-i18n="back">Volver</button></div>
+    </section>
+
+    <section class="chapter finale-chapter" id="chapter-5" aria-labelledby="finalTitle" hidden>
+      <div class="celebration-burst" aria-hidden="true" id="celebrationBurst"></div>
+      <p class="eyebrow" data-i18n="finalEyebrow">HOY EL MUNDO CELEBRA QUE EXISTES</p>
+      <div class="big-number" aria-hidden="true">24<span>♡</span></div>
+      <h2 id="finalTitle" data-i18n="finalTitle">¡Felices 24 años!</h2>
+      <p class="final-message" data-i18n="finalMessage">Feliz cumpleaños, mi niña bonita. Deseo que este nuevo año de vida te regale tranquilidad, risas sinceras, sueños bonitos y muchas razones para sonreír. Gracias por ser tú y por hacer más lindo el mundo de quienes tenemos la suerte de conocerte.</p>
+      <p class="final-love" data-i18n="finalLove">Te quiero muchísimo, preciosa. Eres una ternurita ♡</p>
+      <div class="final-actions"><button class="secondary-button" id="replayButton" type="button"><span aria-hidden="true">↻</span> <span data-i18n="replay">Volver a ver la celebración</span></button><button class="text-button" id="restartButton" type="button" data-i18n="restart">Volver al comienzo</button></div>
+      <p class="handwritten" data-i18n="finalFoot">Con mucho amor, hoy y siempre ♡</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span data-i18n="footer">hecho con cariño, para ti</span> <span aria-hidden="true">✿</span></footer>
+  <audio id="audioPlayer" preload="auto" loop></audio>  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
